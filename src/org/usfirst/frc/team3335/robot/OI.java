@@ -1,8 +1,9 @@
 package org.usfirst.frc.team3335.robot;
 
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 
-import org.usfirst.frc.team3335.robot.commands.ExampleCommand;
+import org.usfirst.frc.team3335.robot.commands.DriveWithJoystick;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -16,6 +17,7 @@ public class OI {
 	// number it is.
 	// Joystick stick = new Joystick(port);
 	// Button button = new JoystickButton(stick, buttonNumber);
+	private Joystick joystick = new Joystick(0);
 
 	// There are a few additional built in buttons you can use. Additionally,
 	// by subclassing Button you can create custom triggers and bind those to
@@ -36,4 +38,8 @@ public class OI {
 	// Start the command when the button is released and let it run the command
 	// until it is finished as determined by it's isFinished method.
 	// button.whenReleased(new ExampleCommand());
+
+	public Joystick getJoystick() {
+	    return joystick;
+	}
 }
